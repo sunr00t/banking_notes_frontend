@@ -17,7 +17,7 @@ export default function Header() {
         </h1>
       </Link>
       <a
-        className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-green-600 text-white px-5 py-2 text-sm shadow-md hover:bg-gree-500 bg-green-600 font-medium transition"
+        className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-green-600 text-white px-5 py-2 text-sm shadow-md hover:bg-gree-500 bg-green-800 font-medium transition"
         href="https://github.com/G5svm/banking_notes_svm"
         target="_blank"
         rel="noopener noreferrer"
