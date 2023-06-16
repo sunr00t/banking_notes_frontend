@@ -7,7 +7,7 @@ export default function Form() {
             <label className="block">
               <span className="text-white-700">Variance</span>
               <input
-                type="text"
+                type="number"
                 className="mt-3
                 block
                 w-full
@@ -24,7 +24,7 @@ export default function Form() {
             <label className="block">
               <span className="text-white-700">Curtosis</span>
               <input
-                type="text"
+                type="number"
                 className="mt-3
                 block
                 w-full
@@ -41,7 +41,7 @@ export default function Form() {
             <label className="block">
               <span className="text-white-700">Skewness</span>
               <input
-                type="text"
+                type="number"
                 className="mt-3
                 block
                 w-full
@@ -58,7 +58,7 @@ export default function Form() {
             <label className="block">
               <span className="text-white-700">Entropy</span>
               <input
-                type="text"
+                type="number"
                 className="mt-3
                 block
                 w-full
