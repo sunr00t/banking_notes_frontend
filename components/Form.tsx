@@ -7,7 +7,7 @@ export default function Form() {
   const [skewness, setSkewness] = useState(0);
   const [entropy, setEntropy] = useState(0);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: { preventDefault: () => void; }) => {
     event.preventDefault();
     const payload = { 
       variance,
