@@ -1,41 +1,40 @@
+import { parse } from 'path';
 import React from 'react';
 import { useState } from 'react';
 
 export default function Form() {
-  const [variance, setVariance] = useState(0);
-  const [curtosis, setCurtosis] = useState(0);
-  const [skewness, setSkewness] = useState(0);
-  const [entropy, setEntropy] = useState(0);
+  const [variance, setVariance] = useState('0.0000');
+  const [curtosis, setCurtosis] = useState('0.0000');
+  const [skewness, setSkewness] = useState('0.0000');
+  const [entropy, setEntropy] = useState('0.0000');
+  
+  const [classification, setClassification] = useState(null);
 
-  const handleSubmit = async (event: { preventDefault: () => void; }) => {
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    const payload = { 
+    const payload = {
       variance,
       curtosis,
       skewness,
-      entropy
-    }
-    console.log(payload)
-    
+      entropy,
+    };
+    console.log(payload);
+
     try {
-      // Envie os dados do formulário para a API usando fetch
-      const response = await fetch('/api/svm', {
+      const config = {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
-      });
-
-      if (response.ok) {
-        console.log(response.json);
-        ;
-      } else {
-        console.log('else');
-        
-      }
+      };
+      const response = await fetch('api/svm', config);
+      const data = await response.json();
+      setClassification(data.classification)
+      console.log(data.classification);
+      
     } catch (error) {
-      console.log('error');
+      console.log(error);
     }
   };
 
@@ -48,7 +47,7 @@ export default function Form() {
               <span className="text-white-700">Variance</span>
               <input
                 value={variance}
-                onChange={e => setVariance(e.target.value)}
+                onChange={(e) => setVariance(e.target.value)}
                 type="number"
                 className="mt-3
                 block
@@ -66,7 +65,7 @@ export default function Form() {
               <span className="text-white-700">Curtosis</span>
               <input
                 value={curtosis}
-                onChange={e => setCurtosis(e.target.value)}
+                onChange={(e) => setCurtosis(e.target.value)}
                 type="number"
                 name="curtosis"
                 className="mt-3
@@ -85,7 +84,7 @@ export default function Form() {
               <span className="text-white-700">Skewness</span>
               <input
                 value={skewness}
-                onChange={e => setSkewness(e.target.value)}
+                onChange={(e) => setSkewness(e.target.value)}
                 type="number"
                 name="skewness"
                 className="mt-3
@@ -104,7 +103,7 @@ export default function Form() {
               <span className="text-white-700">Entropy</span>
               <input
                 value={entropy}
-                onChange={e => setEntropy(e.target.value)}
+                onChange={(e) => setEntropy(e.target.value)}
                 type="number"
                 name="entropy"
                 className="mt-3
@@ -132,6 +131,9 @@ export default function Form() {
             >
               Classificar
             </button>
+          </div>
+          <div>
+            <p> A nota é {classification == 1 ? 'verdadeira': 'falsa'}</p>
           </div>
         </div>
       </div>
