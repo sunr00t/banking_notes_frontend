@@ -6,7 +6,7 @@ module.exports = {
     return [
       {
         source: "/api/svm",
-        destination: "http://svm.brunonascimento.dev.br/validate",
+        destination: "https://svm.brunonascimento.dev.br/validate",
       },
     ];
   },
