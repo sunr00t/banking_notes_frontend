@@ -6,7 +6,7 @@ module.exports = {
     return [
       {
         source: "/api/svm",
-        destination: "https://svm.brunonascimento.dev.br/validate",
+        destination: "http://svm.brunonascimento.dev.br/validate",
       },
     ];
   },
@@ -18,7 +18,7 @@ module.exports = {
         headers: [
           { key: "Access-Control-Allow-Origin", value: "*" },
           { key: 'Referrer-Policy', value: "strict-origin-when-cross-origin"},
-          { key: "Access-Control-Allow-Methods", value: "GET,POST",
+          { key: "Access-Control-Allow-Methods", value: "POST",
           },
         ],
       },
