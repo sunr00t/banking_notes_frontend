@@ -1,7 +1,7 @@
-"use client";
-import Footer from "../components/Footer";
-import Form from "../components/Form";
-import Header from "../components/Header";
+'use client';
+import Footer from '../components/Footer';
+import Form from '../components/Form';
+import Header from '../components/Header';
 
 export default function DreamPage() {
   return (
@@ -11,7 +11,7 @@ export default function DreamPage() {
         <h1 className="mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-100 sm:text-6xl mb-5">
           Check your <span className="text-green-600">banking</span> notes:
         </h1>
-        <Form/>
+        <Form />
       </main>
       <Footer />
     </div>

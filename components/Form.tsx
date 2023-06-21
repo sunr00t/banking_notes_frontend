@@ -1,4 +1,3 @@
-import { parse } from 'path';
 import React from 'react';
 import { useState } from 'react';
 
@@ -7,7 +6,7 @@ export default function Form() {
   const [curtosis, setCurtosis] = useState('0.0000');
   const [skewness, setSkewness] = useState('0.0000');
   const [entropy, setEntropy] = useState('0.0000');
-  
+
   const [classification, setClassification] = useState(null);
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
@@ -30,9 +29,8 @@ export default function Form() {
       };
       const response = await fetch('api/svm', config);
       const data = await response.json();
-      setClassification(data.classification)
+      setClassification(data.classification);
       console.log(data.classification);
-      
     } catch (error) {
       console.log(error);
     }
@@ -133,7 +131,7 @@ export default function Form() {
             </button>
           </div>
           <div>
-            <p> A nota é {classification == 1 ? 'verdadeira': 'falsa'}</p>
+            <p> A nota é {classification == 1 ? 'verdadeira' : 'falsa'}</p>
           </div>
         </div>
       </div>

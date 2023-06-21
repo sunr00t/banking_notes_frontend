@@ -10,7 +10,6 @@ export default function Footer() {
         >
           Inspired in RoomGPT.io ❤️
         </a>
-
       </div>
     </footer>
   );
