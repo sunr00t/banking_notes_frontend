@@ -17,8 +17,9 @@ module.exports = {
         source: "/api/svm",
         headers: [
           { key: "Access-Control-Allow-Origin", value: "*" },
-          { key: 'Referrer-Policy', value: "strict-origin-when-cross-origin"},
-          { key: "Access-Control-Allow-Methods", value: "POST",
+          { key: 'Referrer-Policy', value: "strict-origin-when-cross-origin" },
+          {
+            key: "Access-Control-Allow-Methods", value: "POST",
           },
         ],
       },
