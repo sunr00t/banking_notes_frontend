@@ -132,14 +132,12 @@ export default function Form() {
           </button>
         </div>
       </div>
-      <div className="flex justify-center">
-        <div className={classification == 1 ? 'visible' : 'invisible'}>
-          <Accept />
-        </div>
-        <div className={classification == 0 ? 'visible' : 'invisible'}>
-          <Wrong />
-        </div>
-      </div>
+      
+      {classification !== null && (
+				<div className="flex justify-center">
+					{classification ? <Accept /> : <Wrong />}
+				</div>
+			)}
     </form>
   );
 }
