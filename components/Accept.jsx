@@ -1,11 +1,11 @@
 export default function Accept(props) {
   return (
-    <div className="w-14 h-14 transition ease-in-out delay-150 bg-green-500 hover:-translate-y-1 hover:scale-110 hover:bg-green-600 duration-300">
+    <div className="mt-4 transition ease-in-out delay-150 bg-green-500 hover:-translate-y-1 hover:scale-110 hover:bg-green-600 duration-300">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="text-green-800"
+        className="w-14 h-14 text-green-800"
       >
         <path
           fillRule="evenodd"
