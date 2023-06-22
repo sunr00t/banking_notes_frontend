@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import Image from "next/image";
 import Accept from "./Accept";
 import Wrong from "./Wrong";
+import greenLoader from "../public/green-loader.gif";
 
 export default function Form() {
 	const [variance, setVariance] = useState("0.0000");
@@ -9,6 +11,7 @@ export default function Form() {
 	const [skewness, setSkewness] = useState("0.0000");
 	const [entropy, setEntropy] = useState("0.0000");
 	const [classification, setClassification] = useState(null);
+	const [loading, setLoading] = useState(false);
 
 	const handleSubmit = async (event: { preventDefault: () => void }) => {
 		event.preventDefault();
@@ -18,6 +21,7 @@ export default function Form() {
 			skewness,
 			entropy,
 		};
+		setLoading(true);
 
 		try {
 			const config = {
@@ -30,7 +34,8 @@ export default function Form() {
 			const response = await fetch("api/svm", config);
 			const data = await response.json();
 			setClassification(data.classification);
-			console.log(data.classification);
+			setLoading(false);
+      
 		} catch (error) {
 			console.log(error);
 		}
@@ -127,8 +132,12 @@ export default function Form() {
 			</div>
 
 			<div className="flex justify-center h-20">
-				{classification !== null &&
-					(classification ? <Accept /> : <Wrong />)}
+				{loading ? (
+					<Image src={greenLoader} alt="loading..." className="w-14 h-14" />
+				) : (
+					classification !== null &&
+					(classification ? <Accept /> : <Wrong />)
+				)}
 			</div>
 		</form>
 	);
