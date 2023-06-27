@@ -9,7 +9,6 @@ export default function Form() {
   const [skewness, setSkewness] = useState('0.0000');
   const [entropy, setEntropy] = useState('0.0000');
   const [classification, setClassification] = useState(null);
-  const [show, setShow] = useState(false);
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
@@ -58,6 +57,25 @@ export default function Form() {
                 border border-green-600"
             />
           </label>
+          <div className="grid grid-cols-1 gap-6 pb-4">
+            <label className="block">
+              <span className="text-white-700">Skewness</span>
+              <input
+                value={skewness}
+                onChange={(e) => setSkewness(e.target.value)}
+                type="number"
+                name="skewness"
+                className="mt-3
+                block
+                w-full
+                rounded-md
+                text-white
+                hover: bg-green-800 font-medium transition
+                border-transparent
+                border border-green-600"
+              />
+            </label>
+          </div>
         </div>
         <div className="grid grid-cols-1 gap-6 pb-4">
           <label className="block">
@@ -67,25 +85,6 @@ export default function Form() {
               onChange={(e) => setCurtosis(e.target.value)}
               type="number"
               name="curtosis"
-              className="mt-3
-                block
-                w-full
-                rounded-md
-                text-white
-                hover: bg-green-800 font-medium transition
-                border-transparent
-                border border-green-600"
-            />
-          </label>
-        </div>
-        <div className="grid grid-cols-1 gap-6 pb-4">
-          <label className="block">
-            <span className="text-white-700">Skewness</span>
-            <input
-              value={skewness}
-              onChange={(e) => setSkewness(e.target.value)}
-              type="number"
-              name="skewness"
               className="mt-3
                 block
                 w-full
