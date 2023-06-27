@@ -1,10 +1,8 @@
-FROM node:18-alpine
+FROM node:lts-alpine
 
 WORKDIR /app
 
 COPY . /app
-
-RUN npm install -g npm@9.7.2
 
 RUN npm install
 
