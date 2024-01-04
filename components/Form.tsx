@@ -57,25 +57,6 @@ export default function Form() {
                 border border-green-600"
             />
           </label>
-          <div className="grid grid-cols-1 gap-6 pb-4">
-            <label className="block">
-              <span className="text-white-700">Skewness</span>
-              <input
-                value={skewness}
-                onChange={(e) => setSkewness(e.target.value)}
-                type="number"
-                name="skewness"
-                className="mt-3
-                block
-                w-full
-                rounded-md
-                text-white
-                hover: bg-green-800 font-medium transition
-                border-transparent
-                border border-green-600"
-              />
-            </label>
-          </div>
         </div>
         <div className="grid grid-cols-1 gap-6 pb-4">
           <label className="block">
@@ -96,6 +77,25 @@ export default function Form() {
             />
           </label>
         </div>
+        <div className="grid grid-cols-1 gap-6 pb-4">
+            <label className="block">
+              <span className="text-white-700">Skewness</span>
+              <input
+                value={skewness}
+                onChange={(e) => setSkewness(e.target.value)}
+                type="number"
+                name="skewness"
+                className="mt-3
+                block
+                w-full
+                rounded-md
+                text-white
+                hover: bg-green-800 font-medium transition
+                border-transparent
+                border border-green-600"
+              />
+            </label>
+          </div>
         <div className="grid grid-cols-1 gap-6 pb-4">
           <label className="block">
             <span className="text-white-700">Entropy</span>
