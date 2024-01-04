@@ -12,7 +12,7 @@
 http://banking.brunonascimento.dev.br/
 
 # Dependencies
-- [Backend - Banknote Authentication](https://github.com/G5svm/banking_notes_svm)
+- [Backend - Banknote Authentication](https://github.com/sunr00t/banking_notes_svm)
 - Docker
   
 ## Running 
