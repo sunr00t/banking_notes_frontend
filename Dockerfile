@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:jod-slim
 
 WORKDIR /app
 
