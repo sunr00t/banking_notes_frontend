@@ -1,4 +1,4 @@
-FROM node:jod-alpine
+FROM node:latest
 
 WORKDIR /app
 
